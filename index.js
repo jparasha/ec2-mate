@@ -1,4 +1,16 @@
 
+//Set Folowing Environment variables in Lambda.
+//INACTIVE_TERMINATION_DAYS : {{x Days}}
+//FORCED_INACTIVE_TERMINATION_DAYS : {{y Days}}
+//TERMINATION_DRY_RUN : {{false}} If not dry running
+// x Days: Days after which instances will be terminated
+// y days: Days after which instances will be forced terminated even if DoNotTerminate is true for EC2 Instance Tag
+
+
+//Set following tag for ec2 instances if INACTIVE_TERMINATION_DAYS has to be bypassed
+//DoNotTerminate : true
+
+
 const AWS = require('aws-sdk');
 const date = require('./lib/getDateDiff');
 const reg = require('./data/regions.json');
